@@ -1,5 +1,6 @@
-# Unity - Standard
-.utmp/
+# ======================
+# Unity - Recomandat
+# ======================
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -11,8 +12,9 @@
 /[Mm]emoryCaptures/
 [Rr]ecordings/
 
-# Visual Studio / Rider
+# Visual Studio / Rider / alte tool-uri
 .vs/
+.consulo/
 *.csproj
 *.sln
 *.unityproj
@@ -23,13 +25,12 @@
 *.opendb
 *.VC.db
 
-# Unity generated
+# Unity generated files
 *.pidb.meta
 *.pdb.meta
-*.mdb.meta
+*.mdb.metas
 sysinfo.txt
 ExportedObj/
-.consulo/
 
 # Builds
 *.apk
@@ -37,23 +38,19 @@ ExportedObj/
 *.unitypackage
 *.app
 
-# Asset Store & Plugins
-/[Aa]ssets/AssetStoreTools*
-/[Aa]ssets/Plugins/Editor/JetBrains*
+# Addressables (dacă folosești)
+[Aa]ddressable[Aa]ssets[Dd]ata/
 
-# Addressables
-/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
-
-# StreamingAssets temporare
-/[Aa]ssets/[Ss]treamingAssets/aa/*
-
-# =====================================
-# Fișiere mari - vor fi gestionate cu Git LFS
-# =====================================
+# ======================
+# Fișiere mari (opțional - se pot gestiona cu LFS)
+# ======================
 *.psd
 *.psb
 *.tga
-*.png          # doar dacă ai texturi foarte mari (opțional)
-*.asset        # doar dacă ai asset-uri foarte mari (opțional)
-*.fbx
-*.anim
+
+# ======================
+# Alte fișiere temporare
+# ======================
+*.tmp
+*.DS_Store
+Thumbs.db
