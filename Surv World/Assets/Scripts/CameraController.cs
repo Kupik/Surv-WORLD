@@ -3,16 +3,14 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform target;
-    public float mouseSensitivity = 180f;
-    public float distance = 5.5f;
-    public float heightOffset = 1.8f;
-    public Vector2 pitchMinMax = new Vector2(-35, 65);
-
-    [Header("=== Input ===")]
-    public InputActionAsset inputAsset;        // ←←← Trage același PlayerControls.inputactions aici
-
+    [Header("Input")]
+    public InputActionAsset inputAsset;
     private InputAction lookAction;
+
+    [Header("Sensitivity")]
+    public float mouseSensitivity = 25f;     // mai mare decât la third person
+    public float pitchMinMax = 80f;          // sus/jos
+    public Transform eyesTransform;    
     private float yaw;
     private float pitch;
 
@@ -22,23 +20,29 @@ public class CameraController : MonoBehaviour
         lookAction.Enable();
     }
 
-    private void LateUpdate()
+    private void Start()
     {
-        if (target == null) return;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
+    private void Update()
+    {
         Vector2 lookInput = lookAction.ReadValue<Vector2>();
 
         yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
         pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
-        pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
+        pitch = Mathf.Clamp(pitch, -pitchMinMax, pitchMinMax);
 
-        Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
-        Vector3 desiredPosition = target.position + rotation * new Vector3(0, heightOffset, -distance);
+        // Rotește player-ul pe orizontală
+        transform.rotation = Quaternion.Euler(0, yaw, 0);
 
-        transform.position = desiredPosition;
-        transform.LookAt(target.position + Vector3.up * heightOffset);
+        // Rotește capul/ochii pe verticală (dacă ai un Eyes child)
+        if (eyesTransform != null)
+            eyesTransform.localRotation = Quaternion.Euler(pitch, 0, 0);
     }
 
     private void OnEnable() => lookAction?.Enable();
     private void OnDisable() => lookAction?.Disable();
 }
+ 
