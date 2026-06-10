@@ -1,0 +1,96 @@
+fileFormatVersion: 2
+guid: 0ee0d34f79a1b1346a4fd656561db8fa
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    4300000: b02
+    4300002: m02
+    4300004: Hair_Thick
+    4300006: Hair_Short
+    4300008: Hair_SidePart
+    4300010: Hair_Messy
+    4300012: Hair_Modern
+    4300014: Hair_SlickedBack
+    4300016: Hair_FlatTop
+    4300018: m01
+    4300020: m03
+    4300022: m04
+    4300024: m06
+    4300026: m08
+    4300028: m09
+    4300030: m10
+    4300032: m11
+    4300034: m05
+    4300036: m07
+    4300038: Gladius02
+    4300040: Hammer
+    4300042: Arrow
+    4300044: Spear
+    4300046: Longsword
+    4300048: Broadsword
+    4300050: SpaceRifleOld
+    4300052: Broadsword02
+    4300054: SpacePistol
+    4300056: Bow
+    4300058: Shield02
+    4300060: Shield01
+    4300062: Gladius
+    4300064: Shield03
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

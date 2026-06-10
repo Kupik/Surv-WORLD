@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: 6e8c7da33e321f841bcf6984eadc1f96
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    4300000: b06
+    4300002: b06_helmet01
+    4300004: Hair_Thick
+    4300006: Hair_Short
+    4300008: Hair_SidePart
+    4300010: Hair_Messy
+    4300012: Hair_Modern
+    4300014: Hair_SlickedBack
+    4300016: Hair_FlatTop
+    4300018: m02_hooded
+    4300020: m01_hooded
+    4300022: m03_hooded
+    4300024: m04_hooded
+    4300026: m06_hooded
+    4300028: m08_hooded
+    4300030: m09_hooded
+    4300032: m10_hooded
+    4300034: m05_hooded
+    4300036: m07_hooded
+    4300038: b06_hood
+    4300040: m11_hooded
+    4300042: m02
+    4300044: m01
+    4300046: m03
+    4300048: m04
+    4300050: m06
+    4300052: m08
+    4300054: m09
+    4300056: m10
+    4300058: m11
+    4300060: m05
+    4300062: m07
+    4300064: b06_HiddenInnerLeg
+    4300066: Gladius02
+    4300068: Hammer
+    4300070: Arrow
+    4300072: Spear
+    4300074: Longsword
+    4300076: Broadsword
+    4300078: SpaceRifleOld
+    4300080: Rifle
+    4300082: Broadsword02
+    4300084: SpacePistol
+    4300086: Bow
+    4300088: Shield02
+    4300090: Shield01
+    4300092: Gladius
+    4300094: Shield03
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
