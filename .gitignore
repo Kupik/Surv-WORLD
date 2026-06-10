@@ -28,7 +28,7 @@
 # Unity generated files
 *.pidb.meta
 *.pdb.meta
-*.mdb.metas
+*.mdb.meta
 sysinfo.txt
 ExportedObj/
 
@@ -42,7 +42,7 @@ ExportedObj/
 [Aa]ddressable[Aa]ssets[Dd]ata/
 
 # ======================
-# Fișiere mari (opțional - se pot gestiona cu LFS)
+# Fișiere mari (opțional)
 # ======================
 *.psd
 *.psb
