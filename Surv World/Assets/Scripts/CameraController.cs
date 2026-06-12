@@ -1,48 +1,79 @@
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    [Header("Input")]
-    public InputActionAsset inputAsset;
-    private InputAction lookAction;
+  
+    [Header("Mișcare")]
+    public float walkSpeed = 6f;
+    public float runSpeed = 10f;
+    public float jumpHeight = 2f;
+    public float gravity = 20f;
 
-    [Header("Sensitivity")]
-    public float mouseSensitivity = 25f;     // mai mare decât la third person
-    public float pitchMinMax = 80f;          // sus/jos
-    public Transform eyesTransform;    
-    private float yaw;
-    private float pitch;
+    [Header("Uitare cu Mouse - Cinemachine")]
+    public float mouseSensitivity = 2f;
+    public CinemachineVirtualCamera virtualCamera;
 
-    private void Awake()
-    {
-        lookAction = inputAsset.FindAction("Player/Look");
-        lookAction.Enable();
-    }
+    private CharacterController controller;
+    private Vector3 velocity;
+    private float verticalRotation = 0f;
 
     private void Start()
     {
+        controller = GetComponent<CharacterController>();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (virtualCamera == null)
+            Debug.LogError("Asignează Cinemachine Virtual Camera în Inspector!");
     }
 
     private void Update()
     {
-        Vector2 lookInput = lookAction.ReadValue<Vector2>();
-
-        yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
-        pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
-        pitch = Mathf.Clamp(pitch, -pitchMinMax, pitchMinMax);
-
-        // Rotește player-ul pe orizontală
-        transform.rotation = Quaternion.Euler(0, yaw, 0);
-
-        // Rotește capul/ochii pe verticală (dacă ai un Eyes child)
-        if (eyesTransform != null)
-            eyesTransform.localRotation = Quaternion.Euler(pitch, 0, 0);
+        HandleMovement();
+        HandleMouseLook();
     }
 
-    private void OnEnable() => lookAction?.Enable();
-    private void OnDisable() => lookAction?.Disable();
+    private void HandleMovement()
+    {
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveZ = Input.GetAxisRaw("Vertical");
+
+        Vector3 move = transform.right * moveX + transform.forward * moveZ;
+        move.Normalize();
+
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+
+        controller.Move(move * currentSpeed * Time.deltaTime);
+
+        // Gravitație + Jump
+        if (controller.isGrounded && velocity.y < 0)
+            velocity.y = -2f;
+
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void HandleMouseLook()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+        // Rotire orizontală player
+        transform.Rotate(Vector3.up * mouseX);
+
+        // Rotire verticală prin Cinemachine
+        verticalRotation += -mouseY;
+        verticalRotation = Mathf.Clamp(verticalRotation, -85f, 85f);
+
+        if (virtualCamera != null)
+        {
+            virtualCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+        }
+    }
 }
- 
